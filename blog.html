@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+<body>
+<style>
+ *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#000;
+    color:#fff;
+    line-height:1.8;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+.blog-page{
+    padding:70px 20px;
+}
+
+.container{
+    width:100%;
+    max-width:1100px;
+    margin:auto;
+}
+
+.hero{
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+    margin-bottom:50px;
+}
+
+.hero img{
+    width:100%;
+    height:500px;
+    object-fit:cover;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.6);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.overlay h1{
+    font-size:55px;
+    color:#9cff00;
+}
+
+.content{
+    background:#111;
+    padding:40px;
+    border-radius:20px;
+    margin-bottom:50px;
+}
+
+.content h2{
+    color:#9cff00;
+    margin:30px 0 15px;
+}
+
+.content p{
+    font-size:18px;
+    color:#ddd;
+}
+
+.related-title{
+    text-align:center;
+    font-size:35px;
+    color:#9cff00;
+    margin-bottom:40px;
+}
+
+.related-posts{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:#111;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card-content h3{
+    color:#9cff00;
+    margin-bottom:15px;
+}
+
+.card-content p{
+    color:#ddd;
+}
+
+.read-btn{
+    display:inline-block;
+    margin-top:15px;
+    color:#9cff00;
+    font-weight:bold;
+}
+
+.navigation{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:60px;
+}
+
+.btn{
+    background:#9cff00;
+    color:#000;
+    padding:15px 30px;
+    border-radius:10px;
+    font-weight:bold;
+    transition:.4s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+}
+
+.home-btn{
+    display:block;
+    width:200px;
+    text-align:center;
+    margin:50px auto 0;
+}
+
+/* ================= LARGE PC ================= */
+
+@media (min-width:1400px){
+
+.container{
+    max-width:1300px;
+}
+
+.overlay h1{
+    font-size:65px;
+}
+
+.hero img{
+    height:600px;
+}
+
+}
+
+/* ================= LAPTOP ================= */
+
+@media (max-width:1200px){
+
+.container{
+    max-width:95%;
+}
+
+.overlay h1{
+    font-size:48px;
+}
+
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width:992px){
+
+.related-posts{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.hero img{
+    height:400px;
+}
+
+.overlay h1{
+    font-size:40px;
+}
+
+.content{
+    padding:30px;
+}
+
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width:768px){
+
+.blog-page{
+    padding:50px 15px;
+}
+
+.hero img{
+    height:320px;
+}
+
+.overlay h1{
+    font-size:30px;
+}
+
+.content{
+    padding:25px 20px;
+}
+
+.content p{
+    font-size:16px;
+}
+
+.related-title{
+    font-size:28px;
+}
+
+.related-posts{
+    grid-template-columns:1fr;
+}
+
+.navigation{
+    flex-direction:column;
+}
+
+.btn{
+    width:100%;
+    text-align:center;
+}
+
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width:480px){
+
+.hero{
+    border-radius:15px;
+}
+
+.hero img{
+    height:250px;
+}
+
+.overlay h1{
+    font-size:24px;
+}
+
+.content{
+    padding:20px 15px;
+}
+
+.content h2{
+    font-size:22px;
+}
+
+.content p{
+    font-size:15px;
+}
+
+.card-content{
+    padding:15px;
+}
+
+.related-title{
+    font-size:24px;
+}
+
+.btn{
+    padding:14px 20px;
+    font-size:15px;
+}
+
+}
+</style>
+
+<!-- ---------------First blog post----------------- --> 
+<section class="blog-page" id="blog">
+
+<div class="container">
+
+<div class="hero">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200">
+<div class="overlay">
+<h1>Web Development Trends 2026</h1>
+</div>
+</div>
+
+<div class="content">
+
+<p>
+Web development is evolving rapidly in 2026. Developers are adopting AI tools, cloud technologies, and modern frameworks to create faster and more efficient websites.
+</p>
+
+<h2>AI Powered Development</h2>
+
+<p>
+Artificial intelligence tools help developers write code faster and improve productivity.
+</p>
+
+<h2>Progressive Web Apps</h2>
+
+<p>
+PWAs provide an app-like experience and improve performance on mobile devices.
+</p>
+
+<h2>Modern Frameworks</h2>
+
+<p>
+React, Next.js and Vue continue to dominate modern web development.
+</p>
+
+<h2>Cyber Security</h2>
+
+<p>
+Security is becoming increasingly important as more applications move online.
+</p>
+
+</div>
+<div class="navigation">
+
+<a href="#ai-machine-learning" class="btn">
+Next →
+</a>
+
+<a href="index.html" class="btn">
+Home
+</a>
+
+</div>
+</section>
+
+<!-- -----------------second blog post----------------- -->
+<section class="blog-page" id="ai-machine-learning">
+
+<div class="container">
+
+<div class="hero">
+
+<img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200">
+
+<div class="overlay">
+<h1>AI & Machine Learning</h1>
+</div>
+
+</div>
+
+<div class="content">
+
+<p>
+Artificial Intelligence and Machine Learning are transforming industries and changing the future of software development.
+</p>
+
+<h2>Automation</h2>
+
+<p>
+AI helps automate repetitive tasks and improves efficiency.
+</p>
+
+<h2>Generative AI</h2>
+
+<p>
+Tools like ChatGPT and GitHub Copilot are helping developers write code faster.
+</p>
+
+<h2>Computer Vision</h2>
+
+<p>
+Machine learning enables image recognition and object detection.
+</p>
+
+<h2>Future Opportunities</h2>
+
+<p>
+AI will continue creating exciting opportunities for developers worldwide.
+</p>
+
+</div>
+
+<div class="navigation">
+
+<a href="#blog" class="btn">
+← Previous
+</a>
+
+<a href="index.html" class="btn">
+Home
+</a>
+
+</div>
+
+
+
+
+</div>
+
+</section> 
+<!-- --------------------third blog post---------------- -->
+<section class="blog-page" id="tech-career-growth">
+
+<div class="container">
+
+<!-- Hero Section -->
+
+<div class="hero">
+
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200"
+alt="Tech Career Growth">
+
+<div class="overlay">
+<h1>Tech Career Growth</h1>
+</div>
+
+</div>
+
+
+<!-- Blog Content -->
+
+<div class="content">
+
+<p>
+The technology industry is growing rapidly, creating endless opportunities for developers, designers, and IT professionals. Continuous learning and practical experience are the keys to building a successful tech career.
+</p>
+
+
+<h2>1. Learn In-Demand Skills</h2>
+
+<p>
+Focus on modern technologies such as HTML, CSS, JavaScript, React, Node.js, Python, AI, and Cloud Computing. Keeping your skills updated helps you stay competitive in the industry.
+</p>
+
+
+<h2>2. Build Real Projects</h2>
+
+<p>
+Practical projects strengthen your knowledge and improve your portfolio. Employers often value experience and projects more than certificates.
+</p>
+
+
+<h2>3. Contribute to Open Source</h2>
+
+<p>
+Open-source contributions improve collaboration skills and provide valuable experience while working with professional developers around the world.
+</p>
+
+
+<h2>4. Create a Strong Portfolio</h2>
+
+<p>
+A personal portfolio website showcases your skills, projects, and achievements. It helps recruiters understand your capabilities.
+</p>
+
+
+<h2>5. Stay Consistent</h2>
+
+<p>
+Technology changes quickly. Continuous learning and daily practice are essential for long-term career growth.
+</p>
+
+
+<h2>6. Networking Matters</h2>
+
+<p>
+Connecting with developers and professionals through LinkedIn, GitHub, and communities can lead to internships and job opportunities.
+</p>
+
+</div>
+
+
+<!-- Related Posts -->
+
+
+
+<!-- Previous / Next Buttons -->
+
+<div class="navigation">
+
+<a href="#blog" class="btn">
+← Previous
+</a>
+
+<a href="index.html" class="btn">
+Home
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+</body>
+</html>
